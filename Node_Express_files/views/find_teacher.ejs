@@ -1,0 +1,63 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ -->
+
+<head>
+  <title>Find Teacher</title>
+  <link rel="stylesheet" type="text/css" href="public/css/find_teacher.css">
+</head>
+<body>
+  <%- include ('partials/header') %>
+  <div class="header">
+    <div class="post">
+    
+        <img src="<%= 'data:image/bmp;base64,' + data.user_data.profilePic %>" class="profilePic" />
+        <h1><%= data.user_data.name %></h1>
+        <p class="info" id="email_to_be_deleted">Email: <%= data.user_data.email %></p>
+        <p class="info">Phone Number: <%= data.user_data.phoneNumber %></p>
+        <p class="info">School: <%= data.user_data.school %></p>
+        <p class="info">Bio: <%= data.user_data.bio %></p>
+
+        <form>
+          <input class="back-button" value="Back" onclick="history.back()">
+        </form>
+
+         <button id="post_button" class="display_post" onclick="myFunction()">Show Posts</button>
+    </div>
+  
+    <div class="card" style="display:none;" id="myDIV">
+      <% if (data.post_data.length > 0) {%>
+      <% data.post_data.forEach(function(entry) { %>
+        <div class="post">
+          <h3><%= entry.title %></h3>
+          <p class="info">Category: <%= entry.category %></p>
+          <p class="info">Completed: <%= entry.completed %></p>
+          <p class="info">Details: <%= entry.details %></p>
+        </div>
+      <% }); %>
+      <% } else { %>
+        <h3>No Posts To Show.</h3>
+      <% } %>
+    </div>
+
+    <script>
+        function myFunction() {
+          var y = document.getElementById("post_button");
+          var x = document.getElementById("myDIV");
+          if (x.style.display === "none") {                       
+            x.style.display = "block";
+            y.innerHTML = "Hide Posts";
+          } else {
+            x.style.display = "none";
+            y.innerHTML = "Show Posts";
+          }
+        }
+    </script>
+  </div>
+</body>
+
+<!-- <a href="#"><i class="fa fa-dribbble"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <p><button>Contact</button></p> -->
+<!-- </div> -->

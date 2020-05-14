@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UserProfileActivity"
+        android:orientation="vertical">
+
+        // background
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:padding="15dp"
+            android:background="#284b63">
+
+            // profile pic
+
+            <ImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="132dp"
+                android:layout_height="132dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="55dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/profile_pic" />
+
+            // display full name
+            <TextView
+                android:id="@+id/full_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rosa Sun"
+                android:textSize="40sp"
+                android:layout_below="@+id/profile_pic"
+                android:layout_centerHorizontal="true"
+                android:includeFontPadding="false"
+                android:textColor="#ffffff"/>
+
+            // display username
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="rosa_sun"-->
+<!--                android:textSize="20sp"-->
+<!--                android:layout_below="@+id/full_name"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:includeFontPadding="false"-->
+<!--                android:textColor="#d9d9d9"-->
+<!--                android:layout_marginTop="-6dp"/>-->
+
+        </RelativeLayout>
+
+        // cards
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginTop="-70dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="341dp"
+                android:layout_height="78dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#fcca46"
+                app:cardElevation="10dp">
+
+                // card
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="79dp"
+                    android:padding="10dp">
+
+
+                    <TextView
+                        android:id="@+id/points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:includeFontPadding="false"
+                        android:text="Profile"
+                        android:textSize="35sp" />
+
+                    <Button
+                        android:id="@+id/view_user_listings_button"
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="35dp"
+                        android:background="#fc9e4f"
+                        android:onClick="viewUserPostsClick"
+                        android:text="VIEW USER POSTS"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        // About Me
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginBottom="20dp">
+
+            // About me header
+            <TextView
+                android:id="@+id/about_me_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="About Me"
+                android:textColor="#284b63"/>
+            // user input for about me
+            <TextView
+                android:id="@+id/about_me_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/about_me_header"
+                android:textSize="20sp"
+                android:text="Student at the University of Pennsylvania. I sleep a lot and study computer science in my free time."/>
+        </RelativeLayout>
+
+        // School info
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginBottom="20dp">
+
+            // school info header
+            <TextView
+                android:id="@+id/school_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="School"
+                android:textColor="#284b63"/>
+            // user input for school info
+            <TextView
+                android:id="@+id/school_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/school_header"
+                android:textSize="20sp"
+                android:text="University of Pennsylvania"/>
+        </RelativeLayout>
+
+        // Phone
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginBottom="20dp">
+
+            // phone header
+            <TextView
+                android:id="@+id/phone_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Phone"
+                android:textColor="#284b63"/>
+            // user input for phone
+            <TextView
+                android:id="@+id/phone_num_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/phone_num"
+                android:textSize="20sp"
+                android:text="505 123 4567"/>
+        </RelativeLayout>
+
+        // email
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginBottom="20dp">
+
+            // email header
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Email"
+                android:textColor="#284b63"/>
+            // user input for email
+            <TextView
+                android:id="@+id/email_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/email"
+                android:textSize="20sp"
+                android:text="rosaasor.sun@gmail.com"/>
+        </RelativeLayout>
+
+        // user's current listings
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="30dp">
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/view_user_listings_button"
+                android:background="#d9d9d9"
+                android:text="BACK"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:onClick="backToAllPostsClick"
+                android:layout_marginBottom="35dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

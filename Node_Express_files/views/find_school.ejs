@@ -1,0 +1,37 @@
+<!-- views/pages/index.ejs -->
+<html>
+
+
+<head>
+    <title>Find School</title>
+    <link rel="stylesheet" type="text/css" href="public/css/find_school.css">
+
+</head>
+
+
+<body>
+    <%- include ('partials/header') %>
+
+    <div class="header">
+        <div class="container">
+
+            <% data.forEach(function(entry) { %>
+            <div class="card">
+                <img src="<%= 'data:image/bmp;base64,' + entry.profilePic %>" class="profilePic" />
+                <h1><%= entry.name %></h1>
+                <p class="info">Email: <%= entry.email %></p>
+                <p class="info">Phone Number: <%= entry.phoneNumber %></p>
+                <p class="info">School: <%= entry.school %></p>
+                <p class="info">Bio: <%= entry.bio %></p>
+                <form action="/getTeacher" method="post">
+                    <input style="display:none;"  type="email" name="search_email" value="<%= entry.email %>" />
+                    <input type="submit" class="display_post" value="View" />
+                </form>
+               
+            </div>
+            <% }); %>
+        </div>
+
+    </div>
+
+</body>
